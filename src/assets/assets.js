@@ -9,7 +9,7 @@ import w2 from '../../src/assets/w2.png'
 import w3 from '../../src/assets/w3.png'
 import w4 from '../../src/assets/w4.png'
 import cross from '../../src/assets/c.png'
-
+import b2 from '../../src/assets/b2.png'
 import logo from '../../src/assets/GYM24.png'
 import first from '../../src/assets/first.png'
 import second from '../../src/assets/second.png'
@@ -27,11 +27,11 @@ import toll from '../../src/assets/tools.png'
 import email from '../../src/assets/email.png'
 import tick from '../../src/assets/tick.png'
 import fitness from '../../src/assets/fitness.png'
-import background from '../../src/assets/background.png'
 import burger from '../../src/assets/burger.png'
 import yeloTick from '../../src/assets/yellTick.png'
 export const asset = {
     arrLeft,
+    b2,
     m1,
     cross,
     m2,
@@ -60,7 +60,6 @@ export const asset = {
     toll,
     email,
     tick,
-    background
 }
 
 export const memberShip = [
