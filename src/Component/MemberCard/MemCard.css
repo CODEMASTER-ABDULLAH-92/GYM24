@@ -1,0 +1,65 @@
+.para-mem1{
+    color: white;
+}
+.memcard{
+    background-color: #222222;
+    height: 380px;
+    border-radius: 10px;
+    position: relative;
+    /* padding: 18px; */
+}
+.meme-Heading{
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 1.4rem;
+    padding: 14px 30px;
+    text-align: center;
+    margin-bottom: 1rem;
+    height: 100px;
+}
+.para-mem1{
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    gap: 1rem;
+    max-width: 240px;
+    margin-left: 1rem;
+}
+.para-mem1 p,.para-mem1 img{
+    margin-bottom: 12px;
+}
+.member-btn{
+    display: flex;
+    padding: 10px 50px;
+    border-radius: 10px;
+    color: black;
+    background: yellow;
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: absolute;
+    /* bottom: 1rem; */
+    top: 90%;
+    left: 70%;
+    transform: translate(-90%,-70%);
+}
+.mem-img:hover{
+    color: yellow;
+}
+.memcard:hover{
+    border: 2px solid yellow;
+}
+.meme-Heading:hover{
+    color: black;
+    background-color: yellow;
+}
+@media screen and (max-width:1045px){
+    .memcard{
+        width: 250px;
+    }
+}
+@media screen and (max-width:815px) {
+    .memcard{
+        width: 250px;
+    }
+}

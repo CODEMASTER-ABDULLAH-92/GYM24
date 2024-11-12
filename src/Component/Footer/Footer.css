@@ -1,0 +1,95 @@
+.footer{
+    max-width: 1500px;
+    margin: 100px 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    height: 440px;
+}
+.left{
+    max-width: 340px;
+}
+.left p{
+    font-size: 1.1rem;
+}
+.Middle{
+    max-width: 200px;
+}
+.Middle p{
+    font-size: 1.1rem;
+}
+ .middle-heading,.footer-logo{
+    padding-bottom: 2rem; 
+} 
+.right-phone{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.right-email{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.contact-footer{
+    padding-bottom: 2rem;
+}
+.right{
+    max-width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+}
+.footer-socail-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.right-phone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.right-email{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+@media screen and (max-width:1130px){
+    .footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 100px 1rem;
+    }
+}
+@media screen and (max-width:800px) {
+    .left{
+        display: none;
+    }
+    .footer{
+        margin: 100px 3rem;
+    }
+}
+@media screen and (max-width:527px) {
+    .left{
+        display: none;
+    }
+    .footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .footer-socail-icon{
+        gap: 1rem;
+        justify-content: space-between;
+    }
+}

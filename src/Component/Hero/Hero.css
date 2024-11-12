@@ -1,0 +1,154 @@
+/* .hero{
+    margin: 30px auto;
+    background-image: url(/src/Component/hero/b1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    z-index: -1;
+    height: 50vw;
+ }
+.hero-content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;   
+    align-items: start;
+    gap: 1.5vw;
+    max-width: 40%;
+    bottom: 14%;
+    left: 10vw;
+    color: white;
+}
+.hero-content h1{
+    font-weight: 500;
+    color: white;
+    font-size: max(4.5vw,22px);
+
+}
+@media screen and (max-width:1000px) {
+    .hero-content h1{
+        font-size: 5rem;
+        font-weight: 600;
+    }
+    .hero-content{
+        max-width: 70%;
+    }
+    .hero{
+        margin: 0px;
+    }
+}
+@media screen and (max-width:889px) {
+    .hero-content h1{
+        font-size: 4rem;
+        font-weight: 600;
+    }
+    .hero-content{
+        max-width: 90%;
+    }
+    .hero{
+        margin: 0px;
+    }
+}
+@media screen and (max-width:696px) {
+    .hero-content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 80%;
+        bottom: 10%;
+        gap: 2rem;
+    }
+    .hero-content h1{
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width:580px){
+    .hero-content h1{
+        font-size: 2rem;
+    }
+    .hero-content{
+        max-width: 100%;
+        bottom: 8%;
+    }
+    
+} */
+
+.hero {
+    margin: 30px auto;
+    background-image: url(/src/Component/hero/b1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    z-index: 1; /* Change this to 1 or remove it */
+    height: 50vw;
+}
+
+.hero-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;   
+    align-items: start;
+    gap: 1.5vw;
+    max-width: 40%;
+    bottom: 14%;
+    left: 10vw;
+    color: white;
+    z-index: 2; /* Ensure content is above the background */
+}
+
+.hero-content h1 {
+    font-weight: 500;
+    color: white;
+    font-size: max(4.5vw, 22px);
+}
+
+/* Media Queries */
+@media screen and (max-width: 1000px) {
+    .hero-content h1 {
+        font-size: 5rem;
+        font-weight: 600;
+    }
+    .hero-content {
+        max-width: 70%;
+    }
+    .hero {
+        margin: 0px;
+    }
+}
+
+@media screen and (max-width: 889px) {
+    .hero-content h1 {
+        font-size: 4rem;
+        font-weight: 600;
+    }
+    .hero-content {
+        max-width: 90%;
+    }
+    .hero {
+        margin: 0px;
+    }
+}
+
+@media screen and (max-width: 696px) {
+    .hero-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 80%;
+        bottom: 10%;
+        gap: 2rem;
+    }
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content {
+        max-width: 100%;
+        bottom: 8%;
+    }
+}

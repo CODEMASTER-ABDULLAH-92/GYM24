@@ -1,0 +1,51 @@
+.membership-main{
+    max-width: 1500px;
+    margin: 100px 16rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 2rem;
+}
+.me-heading{
+    color: white;
+    font-size: 1.888rem;
+    text-align: center;
+}
+@media screen and (max-width:1045px){
+
+.membership-main{
+        margin: 100px 0rem;
+    }
+    
+}
+@media screen and (max-width:1000px) {
+    .membership-main{
+        margin: 100px 0rem;
+    }
+}
+@media screen and (max-width:815px) {
+    .membership-main{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        overflow-x: scroll;
+        margin: 20px 0px;
+        gap: 30px;
+        /* padding-left: 56rem; */
+    }
+    .membership-main::-webkit-scrollbar{
+        display: none;
+    }
+}
+.explore-menu-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    margin: 20px 0px;
+    overflow-x: scroll;
+}
+.explore-menu-list::-webkit-scrollbar{
+    display: none;
+}

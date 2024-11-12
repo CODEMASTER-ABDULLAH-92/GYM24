@@ -1,0 +1,55 @@
+.join{
+    color: white;
+    max-width: 1500px;
+    margin: 100px 10rem;
+    padding-bottom: 5rem;
+}
+.join-list{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+}
+.join-h2{
+font-size: 2.4rem;
+margin-bottom: 6rem;
+}
+.join-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 460px;
+}
+.mini-join-text h2{
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.mini-join-text p{
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+.join-width{
+    width: 50px;
+}
+@media screen and (max-width:1100px) {
+    .join{
+        margin: 100px 0;
+    }
+    .join-h2{
+        text-align: center;
+        font-weight: 600;
+    }
+    .join-flex{
+        width: 400px;
+    }
+}
+@media screen and (max-width:788px) {
+    .join-list{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
