@@ -1,4 +1,4 @@
-.join{
+/* .join{
     color: white;
     max-width: 1500px;
     margin: 100px 10rem;
@@ -18,7 +18,7 @@ margin-bottom: 6rem;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    width: 460px;
+    max-width: 460px;
 }
 .mini-join-text h2{
     font-size: 1.4rem;
@@ -27,6 +27,7 @@ margin-bottom: 6rem;
 .mini-join-text p{
     font-size: 1.1rem;
     font-weight: 300;
+    max-width: ;
 }
 .join-width{
     width: 50px;
@@ -51,5 +52,9 @@ margin-bottom: 6rem;
         flex-direction: column;
     }
 }
-
-
+@media screen and (max-width:405px) {
+    .para-long{
+        height: 76px;
+        overflow: ;
+    }
+} */

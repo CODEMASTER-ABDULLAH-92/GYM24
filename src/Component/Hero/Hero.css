@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;   
     align-items: start;
-    gap: 1.5vw;
+    /* gap: 1.5vw; */
     max-width: 40%;
     bottom: 14%;
     left: 10vw;
@@ -31,8 +31,9 @@
 /* Media Queries */
 @media screen and (max-width: 1000px) {
     .hero-content h1 {
-        font-size: 5rem;
+        font-size: 3rem;
         font-weight: 600;
+        
     }
     .hero-content {
         max-width: 70%;
@@ -44,7 +45,7 @@
 
 @media screen and (max-width: 889px) {
     .hero-content h1 {
-        font-size: 4rem;
+        font-size: 2.6rem;
         font-weight: 600;
     }
     .hero-content {
@@ -62,16 +63,16 @@
         align-items: center;
         max-width: 80%;
         bottom: 10%;
-        gap: 2rem;
+        gap: 5px;
     }
     .hero-content h1 {
-        font-size: 3rem;
+        font-size: 2.1rem;
     }
 }
 
 @media screen and (max-width: 580px) {
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 1.33rem;
     }
     .hero-content {
         max-width: 100%;
