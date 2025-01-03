@@ -5,6 +5,9 @@ import Footer from './Component/Footer/Footer'
 import { Route, Routes } from 'react-router-dom'
 import Detailed from './pages/Detailed'
 import Buy from './Component/Buy'
+import SignUp from './pages/SignUp'
+import Login from './pages/Login'
+import StaffDetail from './pages/StaffDetail'
 
 const App = () => {
   return (
@@ -13,7 +16,10 @@ const App = () => {
 <Routes>
   <Route path='/' element={<Home/>}/>
   <Route path='/detail' element={<Detailed/>}/>
-  <Route path='/buy:id' element={<Buy/>}/>
+  <Route path='/buy/:id' element={<Buy/>}/>
+  <Route path='/staff/:id' element={<StaffDetail/>}/>
+  <Route path='/signup' element={<SignUp/>}/>
+  <Route path='/login' element={<Login/>}/>
 </Routes>
 <Footer/>
     </div>

@@ -10,7 +10,7 @@ const Home = () => {
       <Join/>
       <Member/>
       <About/>
-      <Staff/>
+      <Staff />
     </div>
   )
 }

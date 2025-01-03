@@ -15,6 +15,7 @@ const Staff = () => {
               yt={item.yt}
               twitter={item.twitter}
               insta={item.instagram}
+              id={item._id}
             />
           </div>
         );

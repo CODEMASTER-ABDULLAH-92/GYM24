@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import "/src/index.css"
 const Detailed = () => {
     const [border1,setBorder1] = useState(true);
   return (
