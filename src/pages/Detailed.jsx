@@ -99,7 +99,7 @@ const Detailed = () => {
     <p class="text-white mb-4">
         The Fitness Revolution is an invitation to transform your life through movement, strength, and community. 
         With our gym’s state-of-the-art facilities, expert guidance, and supportive community, you’ll find the resources 
-        and motivation you need to thrive.
+        and motivation you need to thrive. Lorem ipsum dolor sit.
     </p>
     <p class="text-white mb-4">
         Join the Fitness Revolution today, and discover the incredible strength that lies within you. Your journey to a 

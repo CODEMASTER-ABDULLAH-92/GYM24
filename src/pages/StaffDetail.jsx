@@ -13,7 +13,6 @@ const StaffDetail = () => {
       setData(trainerData);
     }
   };
-
   useEffect(() => {
     fetchData();
   }, [id]);
@@ -71,7 +70,6 @@ const StaffDetail = () => {
     </div>
   );
 };
-
 export default StaffDetail;
 
 
