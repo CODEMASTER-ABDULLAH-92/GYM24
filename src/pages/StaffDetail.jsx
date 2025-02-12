@@ -1,39 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { trainer } from '../assets/assets';
+import useTrainerData, { asset } from '../assets/assets';
 
 const StaffDetail = () => {
   const [data, setData] = useState(null); // Initialize as null instead of an empty array
   const { id } = useParams(); // Get the id from the URL parameters
+  const { trainer } = useTrainerData();
 
   const fetchData = () => {
-    // Use find() instead of map() to retrieve a single matching item
     const trainerData = trainer.find((item) => item._id === id);
     if (trainerData) {
       setData(trainerData);
+    } else {
+      setData(null); // If no matching trainer, set data to null
     }
   };
+
   useEffect(() => {
     fetchData();
-  }, [id]);
+  }, [id, trainer]); // Added `trainer` to the dependencies to reload if trainer data changes
 
   if (!data) {
-    return <div>Loading...</div>; // Show loading until data is fetched
+    return <div className='text-white'>Loading...</div>; // Show loading until data is fetched
   }
 
   return (
-    <div className="px-[2vw] sm:px-[4vw] md:px-[6vw] lg:px-[8vw] xl:px-[10vw] flex lg:flex-row flex-col  gap-10 py-10">
+    <div className="px-[2vw] sm:px-[4vw] md:px-[6vw] lg:px-[8vw] xl:px-[10vw] flex lg:flex-row flex-col gap-10 py-10">
       {/* Render image only if data is available */}
-      <div className='flex  justify-center items-center'>
-
-
-      {data.image && (
-        <img
-          src={data.image}
-          className="min-w-[500px] h-[500px] object-cover object-center rounded-lg mb-6"
-          alt={data.name}
-        />
-      )}
+      <div className='flex justify-center items-center'>
+        {data.image && (
+          <img
+            src={data.image}
+            className="min-w-[500px] h-[500px] object-cover object-center rounded-lg mb-6"
+            alt={data.name}
+          />
+        )}
       </div>
 
       <div className='text-white'>
@@ -43,7 +44,7 @@ const StaffDetail = () => {
         {/* Render abilities list */}
         <div className="mb-4">
           <h2 className="text-xl font-semibold">Abilities:</h2>
-          <ul className="list-disc pl-5 text-white">
+          <ul className="list-disc pl-5">
             {data.abilities && data.abilities.map((item, index) => (
               <li key={index} className="text-white">{item}</li>
             ))}
@@ -51,7 +52,7 @@ const StaffDetail = () => {
         </div>
 
         {/* Render shifts list */}
-        <div>
+        <div className="mb-4">
           <h2 className="text-xl font-semibold">Shifts:</h2>
           <ul className="list-disc pl-5">
             {data.shifts && data.shifts.map((item, index) => (
@@ -59,29 +60,26 @@ const StaffDetail = () => {
             ))}
           </ul>
         </div>
-        <h1>Experince</h1>
-        <li>{data.experience}</li>
+
+        {/* Render experience */}
+        {data.experience && (
+          <div className="mb-4">
+            <h2 className="text-xl font-semibold">Experience:</h2>
+            <p className="text-white">{data.experience}</p>
+          </div>
+        )}
+
+        {/* Social Media Links */}
         <div className='flex gap-4 py-4'>
-            <img src={data.yt} alt="" />
-            <img src={data.instagram} alt="" />
-            <img src={data.twitter} alt="" />
+          {
+data.yt && <a href={data.yt} className='cursor-pointer'><img src={asset.youtube} alt="YouTube" /> </a>
+          }
+          {data.instagram && <a href={data.instagram} className='cursor-pointer'><img src={asset.insta} alt="YouTube" /> </a>}
+          {data.twitter && <a href={data.twitter} className='cursor-pointer'><img src={asset.twitter} alt="YouTube" /> </a>}
         </div>
       </div>
     </div>
   );
 };
+
 export default StaffDetail;
-
-
-
-
-
-
-// name: "Victoria Shurpik",
-//         yt: youtube,
-//         instagram: insta,
-//         twitter: twitter,
-//         experience: "5 years",
-//         description: "Expert in yoga and mindfulness training.",
-//         abilities: ["Yoga", "Meditation", "Flexibility"],
-//         shifts: ["Day", "Night"],

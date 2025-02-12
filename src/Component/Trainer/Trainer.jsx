@@ -1,28 +1,3 @@
-// import { Link,NavLink } from 'react-router-dom';
-// import './Trainer.css';
-
-// const Trainer = ({ name, image, insta, twitter, yt, id }) => {
-//   return (
-//     <NavLink to={`/staff/${id}`} target="_blank" className="card">
-//       <img src={image} alt={`${name}'s profile`} className='trainer-image' />
-//       <h2 className='trainer-name'>{name}</h2>
-//       <div className="images-card">
-//         <a href={`https://www.youtube.com/${yt}`} target="_blank" rel="noopener noreferrer">
-//           <img className='cursor-pointer' src={yt} alt="YouTube" />
-//         </a>
-//         <a href={`https://www.instagram.com/${insta}`} target="_blank" rel="noopener noreferrer">
-//           <img className='cursor-pointer' src={insta} alt="Instagram" />
-//         </a>
-//         <a href={`https://twitter.com/${twitter}`} target="_blank" rel="noopener noreferrer">
-//           <img className='cursor-pointer' src={twitter} alt="Twitter" />
-//         </a>
-//       </div>
-//     </NavLink>
-//   );
-// };
-
-// export default Trainer;
-
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Trainer.css';

@@ -153,101 +153,136 @@ export const reasonToJoin = [
     }
 ]
 
-export const trainer = [
-    {
-        _id: "hdieian",
-        image: w1,
-        name: "Victoria Shurpik",
-        yt: youtube,
-        instagram: insta,
-        twitter: twitter,
-        experience: "5 years",
-        description: "A specialist in strength training and HIIT (High-Intensity Interval Training) focuses on building strength through resistance exercises and improving cardiovascular fitness with short, intense workout intervals. Expert in yoga and mindfulness training.",
-        abilities: ["Yoga", "Meditation", "Flexibility"],
-        shifts: ["Day", "Night"],
-    },
-    {
-        _id: "hfhiw",
-        image: w2,
-        name: "Elizabeth Lavrinenko",
-        yt: youtube,
-        instagram: insta,
-        twitter: twitter,
-        experience: "3 years",
-        description: "A specialist in strength training and HIIT (High-Intensity Interval Training) focuses on building strength through resistance exercises and improving cardiovascular fitness with short, intense workout intervals. Specialist in strength training and HIIT workouts.",
-        abilities: ["Strength Training", "HIIT", "Endurance Building"],
-        shifts: ["Day"],
-    },
-    {
-        _id: "aneiw30",
-        image: m1,
-        name: "Ivan Gladkikh",
-        yt: youtube,
-        instagram: insta,
-        twitter: twitter,
-        experience: "6 years",
-        description: "A specialist in strength training and HIIT (High-Intensity Interval Training) focuses on building strength through resistance exercises and improving cardiovascular fitness with short, intense workout intervals. Certified personal trainer with a focus on bodybuilding.",
-        abilities: ["Bodybuilding", "Nutritional Advice", "Powerlifting"],
-        shifts: ["Night"],
-    },
-    {
-        _id: "heu8w3h",
-        image: w3,
-        name: "Lyudmila Sabilo",
-        yt: youtube,
-        instagram: insta,
-        twitter: twitter,
-        experience: "4 years",
-        description: "A specialist in strength training and HIIT (High-Intensity Interval Training) focuses on building strength through resistance exercises and improving cardiovascular fitness with short, intense workout intervals. Pilates and core strength specialist.",
-        abilities: ["Pilates", "Core Strength", "Posture Correction"],
-        shifts: ["Day", "Night"],
-    },
-    {
-        _id: "ris3f8f2",
-        image: m2,
-        name: "Evgeny Gurkov",
-        yt: youtube,
-        instagram: insta,
-        twitter: twitter,
-        experience: "7 years",
-        description: "A specialist in strength training and HIIT (High-Intensity Interval Training) focuses on building strength through resistance exercises and improving cardiovascular fitness with short, intense workout intervals. Focuses on athletic performance and injury prevention.",
-        abilities: ["Athletic Training", "Injury Prevention", "Speed Training"],
-        shifts: ["Day"],
-    },
-    {
-        _id: "647ggfu8",
-        image: m3,
-        name: "Anatoly Prytytsky",
-        yt: youtube,
-        instagram: insta,
-        twitter: twitter,
-        experience: "5 years",
-        description: "A specialist in strength training and HIIT (High-Intensity Interval Training) focuses on building strength through resistance exercises and improving cardiovascular fitness with short, intense workout intervals. Specialist in functional training and mobility exercises.",
-        abilities: ["Functional Training", "Mobility", "Balance"],
-        shifts: ["Night"],
-    },
-    {
-        _id: "49hnfns",
-        image: m4,
-        name: "Victor Ludkovich",
-        yt: youtube,
-        instagram: insta,
-        twitter: twitter,
-        experience: "8 years",
-        description: "A specialist in strength training and HIIT (High-Intensity Interval Training) focuses on building strength through resistance exercises and improving cardiovascular fitness with short, intense workout intervals. Expert in endurance sports and marathon preparation.",
-        abilities: ["Endurance Training", "Marathon Preparation", "Long-Distance Running"],
-        shifts: ["Day", "Night"],
-    },
-    {
-        _id: "784hhfei",
-        image: w4,
-        name: "Maria Masyak",
-        yt: youtube,
-        instagram: insta,
-        twitter: twitter,
-        experience: "2 years",
-        description: "A specialist in strength training and HIIT (High-Intensity Interval Training) focuses on building strength through resistance exercises and improving cardiovascular fitness with short, intense workout intervals. New but promising trainer specializing in Zumba.",
-        abilities: ["Zumba", "Dance Fitness", "Aerobics"],
-        shifts: ["Night"],
-    },
-];
+
+
+
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+const useTrainerData = () => {
+  const [trainer, setTrainer] = useState([]);
+
+  useEffect(() => {
+    const fetchTrainers = async () => {
+      try {
+        const response = await axios.get("http://localhost:8000/api/trainer/getTrainer");
+
+        console.log("API Response:", response.data); // Debug the response
+        console.log("Fetched Trainer:", response.data.Trainer); // Corrected field
+        //Trainer this field come from backend function  
+        setTrainer(response.data?.Trainer || []); // Use the correct key
+      } catch (error) {
+        console.error("Error fetching trainers:", error);
+        setTrainer([]); // Prevents undefined errors
+      }
+    };
+
+    fetchTrainers();
+  }, []);
+
+  return { trainer };
+};
+
+export default useTrainerData;
+
+
+
+
+// export const trainer1 = [
+//     {
+//         _id: "hdieian",
+//         image: w1,
+//         name: "Victoria Shurpik",
+//         yt: youtube,
+//         instagram: insta,
+//         twitter: twitter,
+//         experience: "5 years",
+//         description: "A specialist in strength training and HIIT (High-Intensity Interval Training) focuses on building strength through resistance exercises and improving cardiovascular fitness with short, intense workout intervals. Expert in yoga and mindfulness training.",
+//         abilities: ["Yoga", "Meditation", "Flexibility"],
+//         shifts: ["Day", "Night"],
+//     },
+//     {
+//         _id: "hfhiw",
+//         image: w2,
+//         name: "Elizabeth Lavrinenko",
+//         yt: youtube,
+//         instagram: insta,
+//         twitter: twitter,
+//         experience: "3 years",
+//         description: "A specialist in strength training and HIIT (High-Intensity Interval Training) focuses on building strength through resistance exercises and improving cardiovascular fitness with short, intense workout intervals. Specialist in strength training and HIIT workouts.",
+//         abilities: ["Strength Training", "HIIT", "Endurance Building"],
+//         shifts: ["Day"],
+//     },
+//     {
+//         _id: "aneiw30",
+//         image: m1,
+//         name: "Ivan Gladkikh",
+//         yt: youtube,
+//         instagram: insta,
+//         twitter: twitter,
+//         experience: "6 years",
+//         description: "A specialist in strength training and HIIT (High-Intensity Interval Training) focuses on building strength through resistance exercises and improving cardiovascular fitness with short, intense workout intervals. Certified personal trainer with a focus on bodybuilding.",
+//         abilities: ["Bodybuilding", "Nutritional Advice", "Powerlifting"],
+//         shifts: ["Night"],
+//     },
+//     {
+//         _id: "heu8w3h",
+//         image: w3,
+//         name: "Lyudmila Sabilo",
+//         yt: youtube,
+//         instagram: insta,
+//         twitter: twitter,
+//         experience: "4 years",
+//         description: "A specialist in strength training and HIIT (High-Intensity Interval Training) focuses on building strength through resistance exercises and improving cardiovascular fitness with short, intense workout intervals. Pilates and core strength specialist.",
+//         abilities: ["Pilates", "Core Strength", "Posture Correction"],
+//         shifts: ["Day", "Night"],
+//     },
+//     {
+//         _id: "ris3f8f2",
+//         image: m2,
+//         name: "Evgeny Gurkov",
+//         yt: youtube,
+//         instagram: insta,
+//         twitter: twitter,
+//         experience: "7 years",
+//         description: "A specialist in strength training and HIIT (High-Intensity Interval Training) focuses on building strength through resistance exercises and improving cardiovascular fitness with short, intense workout intervals. Focuses on athletic performance and injury prevention.",
+//         abilities: ["Athletic Training", "Injury Prevention", "Speed Training"],
+//         shifts: ["Day"],
+//     },
+//     {
+//         _id: "647ggfu8",
+//         image: m3,
+//         name: "Anatoly Prytytsky",
+//         yt: youtube,
+//         instagram: insta,
+//         twitter: twitter,
+//         experience: "5 years",
+//         description: "A specialist in strength training and HIIT (High-Intensity Interval Training) focuses on building strength through resistance exercises and improving cardiovascular fitness with short, intense workout intervals. Specialist in functional training and mobility exercises.",
+//         abilities: ["Functional Training", "Mobility", "Balance"],
+//         shifts: ["Night"],
+//     },
+//     {
+//         _id: "49hnfns",
+//         image: m4,
+//         name: "Victor Ludkovich",
+//         yt: youtube,
+//         instagram: insta,
+//         twitter: twitter,
+//         experience: "8 years",
+//         description: "A specialist in strength training and HIIT (High-Intensity Interval Training) focuses on building strength through resistance exercises and improving cardiovascular fitness with short, intense workout intervals. Expert in endurance sports and marathon preparation.",
+//         abilities: ["Endurance Training", "Marathon Preparation", "Long-Distance Running"],
+//         shifts: ["Day", "Night"],
+//     },
+//     {
+//         _id: "784hhfei",
+//         image: w4,
+//         name: "Maria Masyak",
+//         yt: youtube,
+//         instagram: insta,
+//         twitter: twitter,
+//         experience: "2 years",
+//         description: "A specialist in strength training and HIIT (High-Intensity Interval Training) focuses on building strength through resistance exercises and improving cardiovascular fitness with short, intense workout intervals. New but promising trainer specializing in Zumba.",
+//         abilities: ["Zumba", "Dance Fitness", "Aerobics"],
+//         shifts: ["Night"],
+//     },
+// ];
